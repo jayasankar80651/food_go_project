@@ -122,10 +122,12 @@ class SecondPage extends StatelessWidget {
                                   builder: (context) => ThirdPage(
                                     image: Database.FoodImages[index]["image"],
                                     name: Database.FoodImages[index]["name"],
-                                    price: Database.FoodImages[index]["price"],
+                                    subname: Database.FoodImages[index]["subname"],
+                                    rating: Database.FoodImages[index]["rating"], 
+                                    
                                   ),
                                 ),
-                              );
+                              ); 
                             },
                             child: Container(
                               height: 100,

@@ -28,6 +28,7 @@ class Database{
       "name":"Cheeseburger",
       "subname":"Wendy's burger",
       "rating":"4.9"
+      
 
     },
     {
@@ -35,6 +36,7 @@ class Database{
       "name":"Hamburger",
       "subname":"veggie burger",
       "rating":"4.8"
+     
 
     },
     {

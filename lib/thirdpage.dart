@@ -3,14 +3,28 @@ import 'package:flutter/material.dart';
 class ThirdPage extends StatelessWidget {
   final String image;
   final String name;
-  final String price;
-  ThirdPage({super.key,required this.image,required this.name,required this.price});
+  final String subname;
+  final String rating;
+ 
+  ThirdPage({
+    super.key,
+    required this.image,
+    required this.name,
+    required this.subname,
+    required this.rating,
+    
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back, color: Colors.black, size: 25),
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(Icons.arrow_back, color: Colors.black, size: 25),
+        ),
         actions: [Icon(Icons.search, color: Colors.black, size: 25)],
       ),
       body: Padding(
@@ -21,16 +35,14 @@ class ThirdPage extends StatelessWidget {
               height: 300,
               width: 450,
               decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/newbur.jpg"),
-                ),
+                image: DecorationImage(image: AssetImage(image)),
               ),
             ),
             SizedBox(height: 30),
             Row(
               children: [
                 Text(
-                  "Hamburger veggie burger",
+                  name,
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 25,
@@ -41,8 +53,20 @@ class ThirdPage extends StatelessWidget {
             ),
             Row(
               children: [
+                Text(
+                  subname,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
                 Icon(Icons.star, color: Colors.yellow, size: 25),
-                Text("4.8 - 14 mins", style: TextStyle(color: Colors.grey)),
+                Text(rating, style: TextStyle(color: Colors.grey)),
               ],
             ),
             SizedBox(height: 10),
@@ -155,9 +179,7 @@ class ThirdPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Center(
-                    child: Text(
-                      "\$9.99",
-                      style: TextStyle(
+                    child: Text( "\$9.99",style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
